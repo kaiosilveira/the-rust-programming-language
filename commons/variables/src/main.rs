@@ -26,5 +26,5 @@ fn main() {
     let spaces = spaces.len();
 
     let mut spaces = "    ";
-    spaces = spaces.len(); // will cause an error, because we can't change a mut variable's type
+    // spaces = spaces.len(); // will cause an error, because we can't change a mut variable's type
 }
