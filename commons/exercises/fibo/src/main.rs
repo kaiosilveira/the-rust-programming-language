@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 fn main() {
     println!("1st Fibonacci number is: {}", fibo(1));
     println!("2nd Fibonacci number is: {}", fibo(2));
@@ -9,6 +11,8 @@ fn main() {
 }
 
 fn fibo(t: i32) -> i32 {
-    let result: i32 = if t <= 2 { 1 } else { fibo(t - 1) + fibo(t - 2) };
-    result
+    match t.cmp(&2) {
+        Ordering::Greater => fibo(t - 1) + fibo(t - 2),
+        _ => 1,
+    }
 }
